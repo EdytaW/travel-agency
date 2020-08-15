@@ -14,7 +14,7 @@ export const getFilteredTrips = ({trips, filters}) => {
   // TODO - filter by duration
   const durationDays = parseInt(filters.duration.to)-parseInt(filters.duration.from);
   if(durationDays > 0){
-    output = output.filter(trip => trip.days <= durationDays);
+    output = output.filter(trip => trip.days >= filters.duration.from && trip.days <= filters.duration.to);
   } else {
     output = [];
   }
