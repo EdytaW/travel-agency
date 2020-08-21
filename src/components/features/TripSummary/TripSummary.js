@@ -12,7 +12,7 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
         <h3 className={styles.title}>{name}</h3>
         <div className={styles.details}>
           <span>{days} days</span>
-          <span>from {cost}</span>
+          <span> from {cost}</span>
         </div>
         {Array.isArray(tags) && tags.length > 0
           ?
