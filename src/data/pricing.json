@@ -55,7 +55,7 @@
     }
   },
   {
-    "id": "name",
+    "id": "orderName",
     "name": "Your name",
     "type": "text"
   },

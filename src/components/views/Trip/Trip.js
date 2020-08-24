@@ -77,7 +77,7 @@ const Trip = ({error, name, image, cost, days, description, country, intro, ...o
               tripDetails={
                 {
                   name:name,
-                  id: otherOptions.id,
+                  tripId: otherOptions.id,
                   countryCode: country.alpha3Code,
                 }
               }

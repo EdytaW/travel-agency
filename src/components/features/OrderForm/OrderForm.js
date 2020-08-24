@@ -18,7 +18,7 @@ const sendOrder = (options, tripCost, tripDetails) => {
     ...tripDetails,
   };
 
-  if(options.contact != '' && options.name != '' && options['start-date'] != '') {
+  if(payload.contact != '' && payload.name != '' && payload['start-date'] != '') {
     const url = settings.db.url + '/' + settings.db.endpoint.orders;
 
     const fetchOptions = {
