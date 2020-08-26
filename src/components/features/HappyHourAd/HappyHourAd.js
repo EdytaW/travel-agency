@@ -9,7 +9,7 @@ class HappyHourAd extends React.Component {
       this.forceUpdate();
     } , 1000);
   }
-  
+
   getCountdownTime(){
     const currentTime = new Date();
     const nextNoon = new Date(Date.UTC(currentTime.getUTCFullYear(), currentTime.getUTCMonth(), currentTime.getUTCDate(), 12, 0, 0, 0));
@@ -21,12 +21,21 @@ class HappyHourAd extends React.Component {
     return Math.round((nextNoon.getTime() - currentTime.getTime())/1000);
   }
 
+  getDescription() {
+    const currentTime = new Date();
+    if (currentTime.getUTCHours() >= 12 && currentTime.getUTCHours() < 13){
+      return this.props.promoDescription;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     const {title} = this.props;
     return (
       <div className={styles.component}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.promoDescription}>{this.getCountdownTime()}</div>
+        <div className={styles.promoDescription}>{this.getDescription() ? this.getDescription() : this.getCountdownTime()}</div>
       </div>
     );
   }
