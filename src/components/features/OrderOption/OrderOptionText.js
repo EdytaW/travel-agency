@@ -8,7 +8,6 @@ const OrderOptionText = ({setOptionValue}) => (
       className={styles.input}
       type='text'
       onChange={event => setOptionValue(event.currentTarget.value)}
-     
     />
   </div>
 );
